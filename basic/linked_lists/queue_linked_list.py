@@ -57,3 +57,11 @@ class SinglyLinkedListQueue(object):
             self._next = next
 
 if __name__ == "__main__":
+    myqueue = SinglyLinkedListQueue()
+    myqueue.enqueue("a")
+
+    myqueue.enqueue("b")
+    print myqueue.first()
+
+    myqueue.dequeue()
+    myqueue.dequeue()
