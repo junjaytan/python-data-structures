@@ -1,3 +1,5 @@
+from queue_linked_list import SinglyLinkedListQueue
+
 class Tree(object):
     """ An Abstract base class representing a tree structure """
 
@@ -73,6 +75,18 @@ class Tree(object):
         def __ne__(self, other):
             """ Return True if other Position represents the same location """
             return not (self == other)
+
+
+    # Breadth-First Traversal
+    def breadthfirst(self):
+        if not self.is_empty():
+            fringe = SinglyLinkedListQueue()        # known positions not yet yielded
+            fringe.enqueue(self.root())             # starting with the root
+            while not fringe.is_empty():
+                p = fringe.dequeue()                # remove from front of queue
+                yield p                             # report this position
+                for c in self.children(p):
+                    fringe.enqueue(c)               # add children to back of queue
 
 if __name__ == "__main__":
     mytree = Tree()

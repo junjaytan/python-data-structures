@@ -1,0 +1,5 @@
+
+sharedbuffer = []
+
+class Producer(object):
+    

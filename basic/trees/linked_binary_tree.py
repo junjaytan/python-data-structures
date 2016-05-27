@@ -178,7 +178,8 @@ class LinkedBinaryTree(BinaryTree):
 
     # Postorder Traversal
     def postorder(self):
-        """ Generate a postorder iteration of positions in the tree """
+        """ Generate a postorder iteration of positions in the tree
+        i.e., visit subtrees rotted at children of the root first, the n visit the root"""
         if not self.is_empty():
             for p in self._subtree_postorder(self.root()):
                 yield p
@@ -189,5 +190,3 @@ class LinkedBinaryTree(BinaryTree):
             for other in self._subtree_postorder(c):        # do postorder of c's subtree
                 yield other                                 # yielding each to our caller
             yield p                                         # visit p after its subtrees
-
-    # Breadth-First Traversal
