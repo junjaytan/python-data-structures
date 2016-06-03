@@ -17,6 +17,7 @@ class MeetingOrganizer(object):
         """
         :param meeting_times: a list of meeting times
         :return:
+        Note: uses a greedy strategy
         using a list of meeting times sorted by start time,
             if start and end time and within the previous entry's start/end times, merge into previous
             if start time is within previous entry's, but end time is after, replace current end time with new end time and remove next entry
